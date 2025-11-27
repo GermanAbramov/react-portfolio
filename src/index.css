@@ -125,64 +125,6 @@ body {
   padding: 0 15px;
 }
 
-/* Scroll to top button  */
-.scrollToTop {
-  position: fixed;
-  right: 0px;
-  bottom: 20px;
-  width: 45px;
-  height: 45px;
-  background: var(--second-color);
-  color: #fff;
-  font-size: var(--small-font-size);
-  border-radius: 3px;
-  cursor: pointer;
-  z-index: -1;
-  box-shadow: var(--box-shadow);
-  opacity: 0;
-  visibility: hidden;
-  transition: .3s linear;
-}
-
-.scrollToTop.flex-center {
-  justify-content: center;
-}
-
-.scrollToTop.active {
-  z-index: 10;
-  opacity: 1;
-  visibility: visible;
-  right: 20px;
-}
-
-/* ======= theme button Light/Dark ======= */
-.them-btn {
-  position: fixed;
-  z-index: 11;
-  right: 0;
-  top: 150px;
-  background: var(--bg-transparent-color-01);
-  backdrop-filter: blur(20px);
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
-  border-radius: 5px 0 0 5px;
-  box-shadow: var(--box-shadow);
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.them-btn .fa-sun,
-.them-btn.sun .fa-moon {
-  display: none;
-}
-
-.them-btn.sun .fa-sun {
-  display: block;
-}
-
 /*=======Scroll bar=======*/
 ::-webkit-scrollbar {
   width: 10px;

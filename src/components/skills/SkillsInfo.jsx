@@ -1,69 +1,62 @@
 import './Skills.css'
-import SectionTitle from '../sectionTitle/sectionTitle'
+import SectionTitle from '../sectionTitle/SectionTitle'
 import Education from './skillBlocks/Education'
 import Awards from './skillBlocks/Awards'
 import Skills from './skillBlocks/Skills'
+import WorkExperience from './skillBlocks/WorkExperience'
+import { motion } from "motion/react";
+import { slideInVariants } from '../../utils/animation'
 
 export default function SkillsInfo() {
     return (
-        <section className="skills section" id="skills">
+        <section className="skills section" id={encodeURI("Навыки")}>
             <div className="container flex-center">
                 <SectionTitle title='Навыки' subtitle='Навыки' />
                 <div className="inner-content">
-                    <div className="skills-description">
+                    <motion.div className="skills-description"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.5 }}
+                        custom={0}
+                        variants={slideInVariants("left", 0.6, 50)}
+                    >
                         <h3>Образование и навыки</h3>
                         <p>
                             For more than 5 years our experts have been accomplishing enough with modern Web
                             Development,
                             new generation web and app programming language.
                         </p>
-                    </div>
+                    </motion.div>
                     <div className="skills-info education-all">
-                        <Education />
-                        <Skills />
-                        <Awards />
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.5 }}
+                            custom={1}
+                            variants={slideInVariants("top", 0.6, 50)}
+                        >
+                            <Education />
+                        </motion.div>
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.5 }}
+                            custom={2}
+                            variants={slideInVariants("top", 0.6, 50)}
+                        >
+                            <Skills />
+                        </motion.div>
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.5 }}
+                            custom={3}
+                            variants={slideInVariants("top", 0.6, 50)}
+                        >
+                            <Awards />
+                        </motion.div>
                     </div>
-                    {/* <div className="education work-exp">
-                        <h3 className="work-exp-title">Work & Experience</h3>
-                        <div className="skills-info">
-                            <div className="experience-card">
-                                <div className="upper">
-                                    <h3>Sr. Graphic Designer</h3>
-                                    <h5>Part Time | Office</h5>
-                                    <span>2020 - 2021</span>
-                                </div>
-                                <div className="hr"></div>
-                                <h4 className="label">Avada Theme.</h4>
-                                <p>I design and develop services for customers of all sizes, specializing in creating
-                                    stylish, modern websites
-                                </p>
-                            </div>
-                            <div className="experience-card">
-                                <div className="upper">
-                                    <h3>Cr. Web Developer</h3>
-                                    <h5>Full Time | InHouse</h5>
-                                    <span>2019 - 2020</span>
-                                </div>
-                                <div className="hr"></div>
-                                <h4 className="label">ib-themes ltd.</h4>
-                                <p>I design and develop services for customers of all sizes, specializing in creating
-                                    stylish, modern websites
-                                </p>
-                            </div>
-                            <div className="experience-card">
-                                <div className="upper">
-                                    <h3>Jr. Web Developer</h3>
-                                    <h5>Full Time | Remote</h5>
-                                    <span>2018 - 2019</span>
-                                </div>
-                                <div className="hr"></div>
-                                <h4 className="label">Creative Gigs.</h4>
-                                <p>I design and develop services for customers of all sizes, specializing in creating
-                                    stylish, modern websites
-                                </p>
-                            </div>
-                        </div>
-                    </div> */}
+                    <WorkExperience />
                 </div>
             </div>
         </section>

@@ -1,22 +1,22 @@
 import './Nav.css'
 import { Link } from 'react-scroll'
 
-export default function Nav({ isMenuOpen }) {
-    const items = ['Главная', 'Обо мне', 'Навыки', 'Сервисы', 'Портфолио', 'Клиенты', 'Контакты']
+export default function Nav({ isMenuOpen, toggleMenu }) {
+    const items = ['Главная', 'Обо мне', 'Навыки', 'Услуги', 'Портфолио', 'Клиенты', 'Контакты']
 
 
     return (
-        <div className={isMenuOpen ? "nav active" : "nav"}>
-            <nav className="nav-menu">
+        <nav className={isMenuOpen ? "nav active" : "nav"}>
+            <div className={isMenuOpen ? "nav-menu active" : "nav-menu"}>
                 {items.map((item, i) => (
-                    console.log(item),
                     <Link
-                        to={item}
+                        to={encodeURI(item)}
                         key={i}
                         className='nav-link'
+                        onClick={toggleMenu}
                     >{item}</Link>
                 ))}
-            </nav>
-        </div>
+            </div>
+        </nav>
     )
 }

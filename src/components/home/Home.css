@@ -81,7 +81,7 @@
     font-weight: 500;
 }
 
-.scroll-down i {
+.scroll-down svg {
     color: var(--second-color);
     font-size: 18px;
     animation: arrow-down ease 2s infinite;

@@ -22,7 +22,6 @@ export default defineConfig([
         sourceType: 'module',
       },
     },
-    settings: { react: { version: '18.3' } },
     rules: {
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
     },

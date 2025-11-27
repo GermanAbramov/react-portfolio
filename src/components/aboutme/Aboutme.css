@@ -70,4 +70,14 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    .professional-list {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width:768px) {
+    .about-wrapper {
+        width: 100%;
+    }
 }

@@ -15,6 +15,7 @@ header.sticky {
 }
 
 header .logo {
+    cursor: text;
     color: var(--first-color);
     font-weight: 600;
 }
